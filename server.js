@@ -8,6 +8,13 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 app.use(cors());
+app.get("/", (req, res) => {
+  res.send(`
+    <h1>🚀 Banking API is Live</h1>
+    <p>JWT Authentication Working ✅</p>
+    <p>Use Postman to test APIs</p>
+  `);
+});
 
 // Routes
 const authRoutes = require("./routes/authRoutes");
